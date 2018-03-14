@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "yarn run build && cp CNAME build/CNAME && gh-pages -d build"
+    "deploy": "yarn run build && cp CNAME build/CNAME && cp public/404.html build/404.html && gh-pages -d build"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
