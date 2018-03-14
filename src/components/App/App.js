@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 
 export default class App extends Component {
   static propTypes = {
-    children: PropTypes.node,
-    push: PropTypes.func.isRequired
+    children: PropTypes.node
   }
 
   static defaultProps = {

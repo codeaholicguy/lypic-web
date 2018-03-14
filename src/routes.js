@@ -1,5 +1,6 @@
 import React from 'react'
-import {Route} from 'react-router'
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Switch, Route} from 'react-router'
 
 import App from './components/App'
 import Home from './components/Home'
@@ -8,10 +9,14 @@ import NotFound from './components/NotFound'
 
 export default function createRoutes() {
   return (
-    <Route component={App}>
-      <Route path="/" component={Home} />
-      <Route path="/tracks/:id" component={Track} />
-      <Route path="*" component={NotFound} />
-    </Route>
+    <Router>
+      <App>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/tracks/:id" component={Track} />
+          <Route component={NotFound} />
+        </Switch>
+      </App>
+    </Router>
   )
 }
