@@ -1,8 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// eslint-disable-next-line
+import 'babel-polyfill'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
+import {Router, browserHistory} from 'react-router'
+import {syncHistoryWithStore} from 'react-router-redux'
+
+import {configureStore} from './store'
+import createRoutes from './routes'
+import registerServiceWorker from './registerServiceWorker'
+
+const store = configureStore()
+const history = syncHistoryWithStore(browserHistory, store)
+const routes = createRoutes()
+
+function renderApp() {
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>,
+    document.getElementById('root')
+  )
+}
+
+renderApp()
+registerServiceWorker()
