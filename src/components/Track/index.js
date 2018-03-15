@@ -1,3 +1,6 @@
-import Track from './Track'
+import {connect} from 'react-redux'
 
-export default Track
+import Track from './Track'
+import {getTrack} from './actions'
+
+export default connect(({track}) => ({track}), {getTrack})(Track)

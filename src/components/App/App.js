@@ -20,6 +20,15 @@ export default class App extends Component {
     children: null
   }
 
+  static childContextTypes = {
+    history: PropTypes.object
+  }
+
+  getChildContext() {
+    return {
+      history: this.props.history
+    }
+  }
   render() {
     const {children} = this.props
 

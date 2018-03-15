@@ -1,3 +1,6 @@
-import Home from './Home'
+import {connect} from 'react-redux'
 
-export default Home
+import Home from './Home'
+import {search} from './actions'
+
+export default connect(() => ({}), {search})(Home)
