@@ -9,7 +9,6 @@ import createHistory from 'history/createBrowserHistory'
 
 import {configureStore} from './store'
 import createRoutes from './routes'
-import registerServiceWorker from './registerServiceWorker'
 
 const history = createHistory()
 const store = configureStore({history})
@@ -25,4 +24,3 @@ function renderApp() {
 }
 
 renderApp()
-registerServiceWorker()
