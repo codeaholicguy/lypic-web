@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
-import {Card, List, Spin} from 'antd'
+import {List} from 'antd'
 
-const Container = styled.div`
-  display: flex;
+import {Loading} from '../../core/components'
+
+const ListWrapper = styled.div`
+  padding: 20px;
 `
 
 export default class TrackList extends Component {
@@ -17,10 +19,10 @@ export default class TrackList extends Component {
   render() {
     const {tracks} = this.props
     return (
-      <Container>
-        {!tracks && <Spin size="large" />}
+      <div>
+        {!tracks && <Loading />}
         {!!tracks && (
-          <Card bodyStyle={{width: 400}}>
+          <ListWrapper>
             <List
               itemLayout="horizontal"
               dataSource={tracks}
@@ -35,9 +37,9 @@ export default class TrackList extends Component {
                 </List.Item>
               )}
             />
-          </Card>
+          </ListWrapper>
         )}
-      </Container>
+      </div>
     )
   }
 }

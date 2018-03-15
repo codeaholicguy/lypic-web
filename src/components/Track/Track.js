@@ -2,15 +2,12 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {Spin, Card} from 'antd'
+import {Divider} from 'antd'
 
-const Container = styled.div`
-  display: flex;
-`
+import {Loading} from '../../core/components'
 
-const LyricWrapper = styled.div`
-  height: 420px;
-  overflow: auto;
+const Wrapper = styled.div`
+  padding: 20px;
 `
 
 export default class Track extends Component {
@@ -26,26 +23,21 @@ export default class Track extends Component {
   render() {
     const {track} = this.props
     return (
-      <Container>
-        {!track && <Spin size="large" />}
+      <div>
+        {!track && <Loading />}
         {!!track && (
-          <Card
-            title={
-              <div>
-                <h2>{track.trackName}</h2>
-                <h5>{track.artistName}</h5>
-              </div>
-            }
-            bodyStyle={{width: 400}}
-          >
-            <LyricWrapper>
+          <Wrapper>
+            <h2>{track.trackName}</h2>
+            <h4>{track.artistName}</h4>
+            <Divider />
+            <div>
               {!track.lyric.length && <p>No lyric</p>}
               {!!track.lyric.length &&
                 track.lyric.split('\n').map(line => <p>{line}</p>)}
-            </LyricWrapper>
-          </Card>
+            </div>
+          </Wrapper>
         )}
-      </Container>
+      </div>
     )
   }
 }

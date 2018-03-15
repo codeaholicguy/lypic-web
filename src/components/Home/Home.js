@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 
 import {Input} from 'antd'
 
-const Container = styled.div`
-  display: flex;
-`
+import {CenterLayout, AdjustCenterLayout} from '../../core/components'
 
 export default class Home extends Component {
   static propTypes = {
@@ -25,14 +22,17 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <Input.Search
-          size="large"
-          placeholder="Song name"
-          enterButton
-          onSearch={this._search}
-        />
-      </Container>
+      <CenterLayout>
+        <AdjustCenterLayout>
+          <h2>What is your favorite song?</h2>
+          <Input.Search
+            size="large"
+            placeholder="Song name"
+            enterButton
+            onSearch={this._search}
+          />
+        </AdjustCenterLayout>
+      </CenterLayout>
     )
   }
 }
