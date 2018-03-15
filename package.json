@@ -23,7 +23,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "NODE_ENV=production yarn run build && cp CNAME build/CNAME && cp public/404.html build/404.html && gh-pages -d build"
+    "deploy": "NODE_ENV=production yarn run build && rm -rf build/static/js/*.map && cp CNAME build/CNAME && cp public/404.html build/404.html && gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.7",
