@@ -1,7 +1,15 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import {Button} from 'antd'
+const Container = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export default class App extends Component {
   static propTypes = {
@@ -15,12 +23,6 @@ export default class App extends Component {
   render() {
     const {children} = this.props
 
-    return (
-      <div>
-        <h1>Lypic</h1>
-        <Button type="primary">Click me</Button>
-        <div>{children}</div>
-      </div>
-    )
+    return <Container>{children}</Container>
   }
 }
