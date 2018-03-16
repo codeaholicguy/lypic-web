@@ -24,6 +24,25 @@ const Title = styled.h1`
   margin: 0px;
 `
 
+const Footer = styled.div`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  @media (min-width: 800px) {
+    width: 800px;
+    margin: auto;
+  }
+`
+
+const Narrative = styled.span`
+  margin-right: 5px;
+`
+
 export default class App extends Component {
   static propTypes = {
     children: PropTypes.node
@@ -67,6 +86,10 @@ export default class App extends Component {
           </div>
         </Navbar>
         {children}
+        <Footer>
+          <Narrative>Made with ♥ by</Narrative>
+          <Link to="https://codeaholicguy.com">Codeaholicguy</Link>
+        </Footer>
       </Wrapper>
     )
   }

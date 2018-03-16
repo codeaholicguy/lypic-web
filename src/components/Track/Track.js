@@ -7,7 +7,7 @@ import {Divider} from 'antd'
 import {Loading} from '../../core/components'
 
 const Wrapper = styled.div`
-  padding: 20px;
+  padding: 20px 20px 50px 20px;
 `
 
 export default class Track extends Component {
