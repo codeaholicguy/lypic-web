@@ -7,6 +7,11 @@ export function search(query) {
       type: ActionTypes.RESET_SEARCH
     })
 
+    dispatch({
+      type: ActionTypes.NEW_SEARCH_KEYWORD,
+      payload: query
+    })
+
     const tracks = await lypicService.search(query)
 
     dispatch({

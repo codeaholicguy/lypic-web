@@ -6,13 +6,19 @@ import {Divider} from 'antd'
 
 import {Loading} from '../../core/components'
 
+import Search from '../Search'
+
 const Wrapper = styled.div`
   padding: 20px 20px 50px 20px;
 `
 
+const SearhWrapper = styled.div`
+  padding: 0px 20px 0px 20px;
+`
+
 export default class Track extends Component {
   static propTypes = {
-    track: PropTypes.object.isRequired,
+    track: PropTypes.object,
     getTrack: PropTypes.func.isRequired
   }
 
@@ -24,6 +30,9 @@ export default class Track extends Component {
     const {track} = this.props
     return (
       <div>
+        <SearhWrapper>
+          <Search />
+        </SearhWrapper>
         {!track && <Loading />}
         {!!track && (
           <Wrapper>
@@ -33,7 +42,9 @@ export default class Track extends Component {
             <div>
               {!track.lyric.length && <p>No lyric</p>}
               {!!track.lyric.length &&
-                track.lyric.split('\n').map(line => <p>{line}</p>)}
+                track.lyric
+                  .split('\n')
+                  .map((line, index) => <p key={`line-${index}`}>{line}</p>)}
             </div>
           </Wrapper>
         )}

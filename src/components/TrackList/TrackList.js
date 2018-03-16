@@ -7,8 +7,14 @@ import {List} from 'antd'
 
 import {Loading} from '../../core/components'
 
+import Search from '../Search'
+
 const ListWrapper = styled.div`
   padding: 20px 20px 50px 20px;
+`
+
+const SearhWrapper = styled.div`
+  padding: 0px 20px 0px 20px;
 `
 
 export default class TrackList extends Component {
@@ -20,6 +26,9 @@ export default class TrackList extends Component {
     const {tracks} = this.props
     return (
       <div>
+        <SearhWrapper>
+          <Search />
+        </SearhWrapper>
         {!tracks && <Loading />}
         {!!tracks && (
           <ListWrapper>
