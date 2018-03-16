@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {Spin} from 'antd'
 
 export const CenterLayout = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
