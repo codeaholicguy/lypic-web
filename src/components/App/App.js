@@ -88,7 +88,7 @@ export default class App extends Component {
         {children}
         <Footer>
           <Narrative>Made with ♥ by</Narrative>
-          <Link to="https://codeaholicguy.com">Codeaholicguy</Link>
+          <a href="https://codeaholicguy.com">Codeaholicguy</a>
         </Footer>
       </Wrapper>
     )
