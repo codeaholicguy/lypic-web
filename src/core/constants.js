@@ -5,3 +5,10 @@ export const ActionTypes = {
   RESET_TRACK: 'RESET_TRACK',
   NEW_SEARCH_KEYWORD: 'NEW_SEARCH_KEYWORD'
 }
+
+export const SearchTypes = {
+  ALL: 'all',
+  TITLE: 'title',
+  ARTIST: 'artist',
+  LYRIC: 'lyric'
+}

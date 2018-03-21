@@ -1,6 +1,9 @@
-import {ActionTypes} from '../core/constants'
+import {ActionTypes, SearchTypes} from '../core/constants'
 
-const initialState = null
+const initialState = {
+  query: null,
+  searchType: SearchTypes.ALL
+}
 
 export default function(state = initialState, action) {
   switch (action.type) {

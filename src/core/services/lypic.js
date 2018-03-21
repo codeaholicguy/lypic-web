@@ -1,11 +1,11 @@
 import {send} from './api'
 
-export async function search(query) {
+export async function search(query, type) {
   try {
     const response = await send({
       path: 'search',
       method: 'get',
-      params: {q: query}
+      params: {q: query, type}
     })
 
     return response.data

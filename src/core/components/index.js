@@ -16,6 +16,7 @@ export const CenterLayout = styled.div`
 `
 
 export const AdjustCenterLayout = styled.div`
+  padding: 0px 20px 0px 20px;
   margin-bottom: 200px;
 `
 
