@@ -19,7 +19,7 @@ export default class Search extends Component {
     super(props)
 
     this.state = {
-      searchType: props.searchType || SearchTypes.ALL
+      searchType: props.keyword.searchType || SearchTypes.ALL
     }
   }
 
