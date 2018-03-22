@@ -41,7 +41,7 @@ export default class Search extends Component {
       <div>
         <Input.Search
           size="large"
-          placeholder="Song name"
+          placeholder="Keyword: song title, artist name, lyric..."
           defaultValue={query || ''}
           enterButton
           onSearch={this._search}

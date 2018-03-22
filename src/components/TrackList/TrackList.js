@@ -22,6 +22,15 @@ export default class TrackList extends Component {
     tracks: PropTypes.array
   }
 
+  static contextTypes = {
+    history: PropTypes.object
+  }
+
+  componentDidMount() {
+    if (this.props.tracks == null) {
+      this.context.history.push('/')
+    }
+  }
   render() {
     const {tracks} = this.props
     return (

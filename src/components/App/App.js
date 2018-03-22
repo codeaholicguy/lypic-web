@@ -67,7 +67,7 @@ export default class App extends Component {
   }
 
   render() {
-    const {children} = this.props
+    const {children, location: {pathname}} = this.props
 
     return (
       <Wrapper>
@@ -77,13 +77,15 @@ export default class App extends Component {
               <Title>lypic</Title>
             </Link>
           </div>
-          <div>
-            <Icon
-              type="arrow-left"
-              style={{fontSize: 32}}
-              onClick={this._back}
-            />
-          </div>
+          {pathname !== '/' && (
+            <div>
+              <Icon
+                type="arrow-left"
+                style={{fontSize: 32}}
+                onClick={this._back}
+              />
+            </div>
+          )}
         </Navbar>
         {children}
         <Footer>

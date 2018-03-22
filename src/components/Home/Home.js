@@ -9,7 +9,7 @@ export default class Home extends Component {
     return (
       <CenterLayout>
         <AdjustCenterLayout>
-          <h2>What is your favorite song?</h2>
+          <h2>What do you describe your favorite song?</h2>
           <Search />
         </AdjustCenterLayout>
       </CenterLayout>
