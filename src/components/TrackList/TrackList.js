@@ -27,7 +27,7 @@ export default class TrackList extends Component {
   }
 
   componentDidMount() {
-    if (this.props.tracks == null) {
+    if (this.props.tracks === null) {
       this.context.history.push('/')
     }
   }
